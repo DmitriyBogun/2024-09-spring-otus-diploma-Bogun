@@ -1,13 +1,16 @@
 spring:
   application:
     name: config-server
+  profiles:
+    active:
+      - native
   cloud:
     config:
       server:
         native:
           search-locations: classpath:/config
-        git:
-          uri: https://github.com/DmitriyBogun/2024-09-spring-otus-diploma-Bogun
+#        git:
+#          uri: https://github.com/DmitriyBogun/2024-09-spring-otus-diploma-Bogun/tree/main/Fitnes-club/config-server/
         bootstrap: true
 
 server:

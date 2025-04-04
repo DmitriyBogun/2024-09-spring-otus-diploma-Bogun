@@ -26,7 +26,7 @@ public class TrainerServiceImpl implements TrainerService {
     private final RestTemplate restTemplate;
 
 
-    private final String BASE_TRAINER_URL = "http://localhost:8080/api/trainer";
+    private final String BASE_TRAINER_URL = "http://clubmanagement:8080/api/trainer";
 
     @PreAuthorize("hasRole('USER')")
     public List<Trainer> getTrainers() {

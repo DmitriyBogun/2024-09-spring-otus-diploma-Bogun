@@ -50,6 +50,8 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=diploma
+#    volumes:
+#      - ./Fitnes-club/schema.sql:/docker-entrypoint-initdb.d/
 
 networks:
   fitnes-net:

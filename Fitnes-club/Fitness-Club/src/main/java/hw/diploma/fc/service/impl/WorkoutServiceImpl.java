@@ -24,7 +24,7 @@ public class WorkoutServiceImpl implements WorkoutService {
     private final RestTemplate restTemplate;
     private final ObjectMapper objectMapper;
 
-    private final String BASE_WORKOUT_URL = "http://localhost:8080/api/workout";
+    private final String BASE_WORKOUT_URL = "http://clubmanagement:8080/api/workout";
 
     @PreAuthorize("hasRole('USER')")
     @Override
