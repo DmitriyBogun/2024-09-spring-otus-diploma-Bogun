@@ -23,7 +23,7 @@ public class VisitorServiceImpl implements VisitorService {
 
     private final ObjectMapper objectMapper;
     private final RestTemplate restTemplate;
-    private final String BASE_VISITOR_URL = "http://clubmanagement:8080/api/visitor";
+    private final String BASE_VISITOR_URL = "http://localhost:8080/api/visitor";
 
     @PreAuthorize("hasRole('ADMIN')")
     @Override

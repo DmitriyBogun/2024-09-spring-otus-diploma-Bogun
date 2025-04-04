@@ -2,16 +2,15 @@ spring:
   application: fitness-club
 
   datasource:
-    url: jdbc:postgresql://fitnes-postgres:5432/diploma
+    url: jdbc:postgresql://localhost:5432/diploma
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
   sql:
     init:
       mode: always
-      schema-locations:
-        - classpath:schema.sql
-        - classpath:data.sql
+      data-locations: data.sql
+      schema-locations: schema.sql
   jpa:
     open-in-view: false
     generate-ddl: true

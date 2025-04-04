@@ -23,7 +23,7 @@ public class VisitorCardServiceImpl implements VisitorCardService {
     private final RestTemplate restTemplate;
     private final ObjectMapper objectMapper;
 
-    private final String BASE_CARD_URL = "http://clubmanagement:8080/api/card";
+    private final String BASE_CARD_URL = "http://localhost:8080/api/card";
 
     @PreAuthorize("hasRole('OWNER')")
     @Override

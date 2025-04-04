@@ -3,4 +3,4 @@ spring:
     name: fitness-club
   cloud:
     config:
-      uri: http://config-server:8071
+      uri: http://localhost:8071

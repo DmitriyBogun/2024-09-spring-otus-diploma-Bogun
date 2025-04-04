@@ -21,7 +21,7 @@ public class OwnerServiceImpl implements OwnerService {
     private final ObjectMapper objectMapper;
     private final RestTemplate restTemplate;
 
-    private final String BASE_REPORT_URL = "http://clubmanagement:8080/api/report";
+    private final String BASE_REPORT_URL = "http://localhost:8080/api/report";
 
     @PreAuthorize("hasRole('OWNER')")
     public Report getReport(){
