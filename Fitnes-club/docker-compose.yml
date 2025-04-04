@@ -1,0 +1,59 @@
+#version: '3'
+services:
+  config-server:
+    image: 'config-server:latest'
+    container_name: configserver
+    networks:
+      - fitnes-net
+    ports:
+      - "8071:8071"
+  
+  fitness-club:
+    image: 'fitness-club:latest'
+    container_name: fitnessclub
+#      dockerfile: Fitnes-club/Fitness-Club/Dockerfile
+    networks:
+      - fitnes-net
+    ports:
+      - "9777:9777"
+    depends_on:
+      - database
+      - config-server
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://database:5432/diploma
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
+
+  club-management:
+    image: 'fitness-manager:latest'
+    container_name: clubmanagement
+    networks:
+      - fitnes-net
+    ports:
+      - "8080:8080"
+    depends_on:
+      - database
+      - config-server
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://database:5432/diploma
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
+
+  database:
+    image: "postgres:17"
+    container_name: fitnes-postgres
+    networks:
+      - fitnes-net
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=diploma
+
+networks:
+  fitnes-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.10.150.0/24

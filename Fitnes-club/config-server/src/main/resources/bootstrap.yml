@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/config
+        git:
+          uri: https://github.com/DmitriyBogun/2024-09-spring-otus-diploma-Bogun
+        bootstrap: true
+
+server:
+  port: 8071
+
+encrypt:
+    key: secretkey
+
+logging:
+  level:
+    ROOT: INFO
+
+#Enable all Spring Boot Actuator endpoints.
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

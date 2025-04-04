@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: fitness-club
+  cloud:
+    config:
+      uri: http://config-server:8071
